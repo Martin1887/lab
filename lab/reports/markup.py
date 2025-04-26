@@ -1,88 +1,21 @@
 import datetime
 import logging
+import os
 
 import txt2tags
 
 ESCAPE_WORDBREAK = "xWBRx"
 ESCAPE_WHITESPACE = "xWHITESPACEx"
 
-CSS = """\
+CSS = f"""\
 <style type="text/css">
-    body {
-        font-family: Ubuntu, Helvetica, Arial, sans-serif;
-    }
-    table {
-        border-collapse: collapse;
-    }
-    table th {
-        text-align: left;
-        padding-top: 5px;
-        padding-bottom: 4px;
-        background-color: #aaa;
-        color: #ffffff;
-        /* Make table headers sticky. */
-        position: sticky;
-        top: 0;
-    }
+    {open(os.path.join(os.path.dirname(__file__), "assets", "css", "style.css")).read()}
 </style>
 """
 
-JAVASCRIPT = """\
+JAVASCRIPT = f"""\
 <script type="text/javascript">
-function toggle_element(element) {
-    if (element.style.display == "none") {
-        element.style.display = "";
-    } else {
-        element.style.display = "none";
-    }
-}
-
-function find_next(element, classname) {
-    element = element.nextSibling;
-    while(element.nodeName != classname)
-        element = element.nextSibling;
-    return element;
-}
-
-function toggle_table(toggle_button) {
-    var table = find_next(toggle_button, "TABLE");
-    toggle_element(table);
-    if (toggle_button.innerHTML == "Show table") {
-        toggle_button.innerHTML = "Hide table";
-    } else {
-        toggle_button.innerHTML = "Show table";
-    }
-}
-
-function show_table(section) {
-    heading = section.children[0];
-    var toggle_button = find_next(heading, "BUTTON");
-    var table = find_next(toggle_button, "TABLE");
-    table.style.display = "";
-    toggle_button.innerHTML = "Hide table";
-}
-
-function show_main_tables() {
-    var names = ["unexplained-errors", "info", "summary"];
-    for (var i = 0; i < names.length; i++) {
-        var section = document.getElementById(names[i]);
-        try {
-            show_table(section);
-        } catch (e) {
-            console.log("No table found for " + names[i]);
-        }
-    }
-
-    // If there is only one table, show it and hide the button.
-    var buttons = document.getElementsByTagName('button');
-    var tables = document.getElementsByTagName('table');
-    if (buttons.length == 1 && tables.length == 1) {
-        tables[0].style.display = "";
-        buttons[0].style.display = "none";
-    }
-}
-
-document.addEventListener("DOMContentLoaded", show_main_tables);
+    {open(os.path.join(os.path.dirname(__file__), "assets", "js", "main.js")).read()}
 </script>
 """
 

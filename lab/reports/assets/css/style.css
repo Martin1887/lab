@@ -1,0 +1,16 @@
+body {
+    font-family: Ubuntu, Helvetica, Arial, sans-serif;
+}
+table {
+    border-collapse: collapse;
+}
+table th {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #aaa;
+    color: #ffffff;
+    /* Make table headers sticky. */
+    position: sticky;
+    top: 0;
+}
