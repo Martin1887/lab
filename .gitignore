@@ -9,3 +9,8 @@ examples/ff/data/
 examples/singularity/data/
 examples/vertex-cover/data/
 lab.egg-info/
+
+.devenv*
+devenv.local.nix
+.direnv
+.envrc
