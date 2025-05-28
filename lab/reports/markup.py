@@ -16,6 +16,7 @@ CSS = f"""\
 JAVASCRIPT = f"""\
 <script type="text/javascript">
     {open(os.path.join(os.path.dirname(__file__), "assets", "js", "main.js")).read()}
+    {open(os.path.join(os.path.dirname(__file__), "assets", "js", "datalib.js")).read()}
 </script>
 """
 
