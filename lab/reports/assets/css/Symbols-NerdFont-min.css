@@ -1,0 +1,25 @@
+/*
+ *# [Nerd Fonts]  Website: https://www.nerdfonts.com
+ *# [Nerd Fonts]  Development Website: https://github.com/ryanoasis/nerd-fonts
+ *# [Nerd Fonts]  Version: 3.4.0
+ *# [Nerd Fonts]  The following is generated from the build script
+ */
+.nf,.nerd-font,.nerd-fonts{
+    font-family:'NerdFontsSymbols Nerd Font';
+    font-style:normal;
+    font-weight:normal;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+.nf-fae-tools:before{content:"\e20f"}
+.nf-fa-sort_asc:before{content:"\f0de"}
+.nf-fa-sort_desc:before{content:"\f0dd"}
+.nf-fa-filter:before{content:"\f0b0"}
+.nf-oct-eye:before{content:"\f441"}
+.nf-fa-plus_circle:before{content:"\f055"}
+.nf-fa-minus_circle:before{content:"\f056"}
+.nf-md-close_circle:before{content:"\f0159"}
+.nf-md-backup_restore:before{content:"\f006f"}

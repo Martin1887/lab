@@ -1,3 +1,4 @@
+import base64
 import datetime
 import logging
 import os
@@ -10,6 +11,31 @@ ESCAPE_WHITESPACE = "xWHITESPACEx"
 CSS = f"""\
 <style type="text/css">
     {open(os.path.join(os.path.dirname(__file__), "assets", "css", "style.css")).read()}
+    @font-face {{
+        font-family: 'NerdFontsSymbols Nerd Font';
+        src: url(data:application/x-font-woff;charset=utf-8;base64,{
+    base64.b64encode(
+        open(
+            os.path.join(
+                os.path.dirname(__file__),
+                "assets",
+                "fonts",
+                "Symbols-NerdFont-min.woff2",
+            ),
+            "rb",
+        ).read()
+    )
+}) format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }}
+    {
+    open(
+        os.path.join(
+            os.path.dirname(__file__), "assets", "css", "Symbols-NerdFont-min.css"
+        )
+    ).read()
+}
 </style>
 """
 

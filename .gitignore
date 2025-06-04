@@ -14,3 +14,5 @@ lab.egg-info/
 devenv.local.nix
 .direnv
 .envrc
+lab/reports/assets/fonts/NerdFontSymbolsComplete.css
+lab/reports/assets/fonts/NerdFontSymbolsComplete.woff2

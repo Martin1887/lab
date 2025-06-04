@@ -9,5 +9,7 @@
   };
   packages = with pkgs; [
     ruff
+    python312Packages.fonttools
+    python312Packages.brotli
   ];
 }
