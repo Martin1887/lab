@@ -83,13 +83,21 @@ def _get_config(target):
 
         config["postproc"].append([ESCAPE_WHITESPACE, r"&nbsp;"])
 
+        # Add id to tables.
+        config["postproc"].append(
+            [
+                r'<section id="(.+?)">\n<h2>(.+?)</h2>\n\n<table class="tableborder">',
+                r'<section id="\1">\n<h2\2</h2>\n\n'
+                r'<table id="table-\1" class="tableborder">',
+            ]
+        )
         # Hide tables by default.
         config["postproc"].append(
             [
-                r'<table class="tableborder">',
+                r'<table id="(.+?)" class="tableborder">',
                 r'<button type="button" class="toggle-table" '
                 'onclick="toggle_table(this)">Show table</button><p></p>\n\n'
-                '<table class="tableborder" style="display:none">',
+                '<table id="\1" class="tableborder" style="display:none">',
             ]
         )
         # Automatically show tables when their links are clicked.
@@ -98,6 +106,20 @@ def _get_config(target):
                 r'<a href="#(.+?)">',
                 r"""<a href="#\1" onclick="show_table("""
                 r"""document.getElementById('\1'));">""",
+            ]
+        )
+        # Tools button to load the table analysis.
+        config["postproc"].append(
+            [
+                r'<table id="(.+?)" class="tableborder" style="display:none">\n'
+                r"<tr>\n<th>(.+?)</th>",
+                r'<table id="\1" class="tableborder" style="display:none">\n'
+                r'<tr>\n<th><div class="cell-flex cell-flex-control">'
+                r'<div class="buttons-container">'
+                r'<button title="Enable sorting and filtering" '
+                r'class="button button-left button-bordered nf nf-fae-tools" '
+                r'onclick="TableDataView.loadTable(document.getElementById(\'\1\'))">'
+                r"</button></div><div>\2</div></div></th>",
             ]
         )
 

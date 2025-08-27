@@ -4,9 +4,12 @@ body {
 table {
     border-collapse: collapse;
 }
+/* table tr { */
+/*     height: 100%; */
+/* } */
 table th {
     text-align: left;
-    padding-top: 5px;
+    padding-top: 4px;
     padding-bottom: 4px;
     background-color: #aaa;
     color: #ffffff;
@@ -14,10 +17,172 @@ table th {
     position: sticky;
     top: 0;
     z-index: 2;
+    height: 100%;
 }
+
+.cell-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    height: 100%;
+}
+.cell-flex-control {
+    align-items: stretch;
+}
+
 table tr td:first-child {
   position: sticky;
   left: 0;
   z-index: 1;
   background: #fff;
+}
+
+.button {
+    font-size: 70%;
+    margin: 2px;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.button-bordered {
+    border: 1px solid black;
+    border-radius: 2px;
+    background: #bbb;
+    padding: 2px;
+}
+.button-sorting {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    /* Reduce font-size only once */
+    font-size: 100% !important;
+}
+.button-sorting-asc {
+    margin-top: 6px !important;
+    margin-bottom: -4px !important;
+    display: block;
+}
+.button-bordered .button-sorting-asc {
+    margin-top: 2px !important;
+}
+.button-sorting-desc {
+    margin-top: -4px !important;
+    margin-bottom: 2px !important;
+    display: block;
+}
+.button-left {
+    margin-left: 0px !important;
+}
+.button-right {
+    margin-right: 0px !important;
+}
+.button-nomargin {
+    margin: 0px;
+}
+.element-hidden {
+    display: none !important;
+}
+.danger {
+    color: #b44 !important;
+}
+.warning {
+    color: #eb2 !important;
+}
+.positive {
+    color: #4d8 !important;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buttons-together-container {
+    justify-content: center !important;
+}
+
+.flex-cell-title-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.flex-cell-title-header span {
+    line-height: 100%;
+}
+
+.filters-dialog {
+    z-index: 10;
+    position: fixed;
+    width: 80%;
+    height: 80%;
+}
+.filters-dialog-hidden {
+    display: none;
+}
+
+.row-hidden {
+    display: none !important;
+}
+
+.cell-hidden {
+    display: none !important;
+}
+
+.undecorated-list {
+    list-style-type: none;
+}
+
+.hidden-elements-row {
+    display: table-caption;
+}
+
+.hidden-elements-row-flex {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+}
+
+.hidden-elements-cell {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hidden-elements-header {
+    font-size: 80%;
+    font-weight: bold !important;
+    margin-bottom: -8px;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+.hidden-elements-contents {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hidden-elements-contents ul {
+    padding: 0px;
+}
+
+.sort-number-indicator {
+    display: block;
+    font-weight: bold !important;
+    font-size: 70%;
+    line-height: 1;
+}
+.inter-sorting-buttons {
+    font-size: 40%;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.inter-sorting-buttons-empty::before {
+  content: "\200b"; /* zero-width space */
 }
