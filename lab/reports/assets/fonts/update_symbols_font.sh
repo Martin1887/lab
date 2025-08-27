@@ -1,7 +1,7 @@
 #!bash
 
 SYMBOLS=(.nf-fae-tools .nf-fa-sort_asc .nf-fa-sort_desc .nf-fa-filter .nf-oct-eye
-    .nf-fa-plus_circle .nf-fa-minus_circle .nf-md-close_circle .nf-md-backup_restore)
+    .nf-fa-plus_circle .nf-fa-minus_circle .nf-fa-close .nf-fa-undo)
 
 source=NerdFontSymbolsComplete
 sourcecss=$source.css
