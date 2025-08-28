@@ -440,8 +440,8 @@ class TableDataView {
     sortData(reset) {
         if (reset) {
             for (let i = 0; i < this.sorted_view.length; i++) {
-                this.sorted_view.sort((a, b) => { return a.index > b.index; });
-                this.sorted_view[i].value.sort((a, b) => { return a.index > b.index; });
+                this.sorted_view.sort((a, b) => { return a.index - b.index; });
+                this.sorted_view[i].value.sort((a, b) => { return a.index - b.index; });
             }
         } else {
             if (this.ordering_by_row) {
