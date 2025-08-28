@@ -17,9 +17,9 @@
 .nf-fae-tools:before{content:"\e20f"}
 .nf-fa-sort_asc:before{content:"\f0de"}
 .nf-fa-sort_desc:before{content:"\f0dd"}
-.nf-fa-filter:before{content:"\f0b0"}
+.nf-md-filter:before{content:"\f0232"}
 .nf-oct-eye:before{content:"\f441"}
-.nf-fa-plus_circle:before{content:"\f055"}
-.nf-fa-minus_circle:before{content:"\f056"}
+.nf-md-plus_circle:before{content:"\f0417"}
+.nf-md-minus_circle:before{content:"\f0376"}
 .nf-fa-close:before{content:"\f00d"}
 .nf-fa-undo:before{content:"\f0e2"}

@@ -199,7 +199,7 @@ class TableDataView {
                         left_buttons_container.parentElement.appendChild(right_buttons_container);
                         TableDataView.addButton(right_buttons_container,
                             "Open filters window",
-                            ["button-bordered", "button-right", "nf", "nf-fa-filter"],
+                            ["button-bordered", "button-right", "nf", "nf-md-filter"],
                             () => this.toggleFiltersDialog());
                     } else {
                         // Sort and hide buttons.
@@ -214,7 +214,7 @@ class TableDataView {
                         left_buttons_container.classList.add("buttons-container");
                         TableDataView.addButton(left_buttons_container,
                             "Filter " + (is_header ? "column" : "row"),
-                            ["button-left", "danger", "nf", "nf-fa-minus_circle"],
+                            ["button-left", "danger", "nf", "nf-md-minus_circle"],
                             is_row_header ? () => this.hideRow(cell) : () => this.hideColumn(cell));
 
                         let right_buttons_container = document.createElement("div");
@@ -529,7 +529,7 @@ class TableDataView {
         let list_element = document.createElement("li");
         TableDataView.addButton(list_element,
             "Unfilter row",
-            ["button-left", "positive", "nf", "nf-fa-plus_circle"],
+            ["button-left", "positive", "nf", "nf-md-plus_circle"],
             () => {
                 hidden_cell_contents_list.removeChild(list_element);
                 if (hidden_cell_contents_list.children.length === 0 &&
@@ -564,7 +564,7 @@ class TableDataView {
         let list_element = document.createElement("li");
         TableDataView.addButton(list_element,
             "Unfilter column",
-            ["button-left", "positive", "nf", "nf-fa-plus_circle"],
+            ["button-left", "positive", "nf", "nf-md-plus_circle"],
             () => {
                 hidden_cell_contents_list.removeChild(list_element);
                 if (hidden_cell_contents_list.children.length === 0 &&
