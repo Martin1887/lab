@@ -17,9 +17,7 @@ for symbol in "${SYMBOLS[@]}"; do
     css=$(grep -E "$symbol:before{content:[\"\\0-9a-f]+}" -o $sourcecss)
     echo $css >>$cssfile
     # Extract the UTF-8 code.
-    utf=$(echo $css | cut -f2 --delimiter "\"")
-    # Remove the backslash.
-    utf=${utf:1:4}
+    utf=$(echo $css | cut -f2 --delimiter "\"" | cut -f2 --delimiter "\\")
     if [ -z $utfcodes ]; then
         utfcodes=$utf
     else
